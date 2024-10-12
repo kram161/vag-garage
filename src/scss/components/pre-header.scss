@@ -51,7 +51,6 @@
 	}
 	&__buttons{
 		display: flex;
-
 	}
 	&__button{
 		padding: 20px 60px;
@@ -100,7 +99,12 @@
 		  }
 	}
 	@include media-mx(1024){
-		min-height: unset;
+		min-height: 600px;
+		&__button{
+			padding: 20px 40px;
+			font-size: 16px;
+			white-space: nowrap;
+		}
 	}
 	@include media-mx(768){
 		flex-direction: column;
@@ -141,6 +145,17 @@
 				right: -60px;
 			}
 		  }
+	}
+	@include media-mx(510){
+		&__buttons{
+			flex-direction: column;
+		}
+		&__button{
+			margin: 0;
+			&:nth-child(2){
+				margin: 10px 0 0 0;
+			}
+		}
 	}
 	@include media-mx(480){
 		&__circle{
