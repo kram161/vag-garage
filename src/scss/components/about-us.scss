@@ -1,0 +1,88 @@
+@import "../config/mixins";
+
+.about-us{
+	margin: 72px 0 0 0;
+	width: 100%;
+	&__description{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		max-width: 1440px;
+		margin: 0 auto;
+		h2{
+			color: #000;
+			font-weight: 700;
+			font-size: 48px;
+		}
+	}
+	&__slider{
+		max-width: 1440px;
+		margin: 24px auto 0 auto;
+		.swiper-slide{
+			width: 480px !important;
+			img{
+				display: flex;
+				width: 480px !important;
+				height: 480px !important;
+				object-fit: cover;
+			}
+		}
+	}
+	&__navigation{
+		display: flex;
+		align-items: center;
+		div{
+			border: 1px solid #141313;
+			padding: 14px 18px;
+			cursor: pointer;
+			transition: all 0.5s ease;
+			&:nth-child(1){
+				margin: 0 8px 0 0;
+			}
+			svg{
+				path{
+					transition: all 0.5s ease;
+				}
+			}
+			&:hover{
+				border: 1px solid #FC1D1D;
+				background: #FC1D1D;
+				svg{
+					path{
+						fill: #fff;
+					}
+				}
+			}
+		}
+	}
+	@include media-mx(1440){
+		padding: 0 15px;
+	}
+	@include media-mx(1024){
+		&__slider{
+			.swiper-slide{
+				width: 350px !important;
+				img{
+					width: 350px !important;
+					height: 350px !important;
+				}
+			}
+		}
+	}
+	@include media-mx(768){
+		&__description{
+			h2{
+				font-size: 36px;
+			}
+		}
+		&__slider{
+			.swiper-slide{
+				width: 230px !important;
+				img{
+					width: 230px !important;
+					height: 230px !important;
+				}
+			}
+		}
+	}
+}

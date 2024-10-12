@@ -1,0 +1,167 @@
+@import "../config/mixins";
+
+@keyframes car {
+	from {
+		right: -100%;
+	}
+
+	to {
+		right: 0;
+	}
+  }
+
+.pre-header{
+	position: relative;
+	display: flex;
+	align-items: center;
+	min-height: 760px;
+	background: #000;
+	&__wrapper{
+		margin: 0 auto;
+		display: flex;
+		justify-content: space-between;
+		height: 100%;
+		max-width: 1440px;
+		width: 100%;
+	}
+	&__description{
+		display: flex;
+		flex-direction: column;
+		margin: auto 0;
+	}
+	&__car{
+		position: absolute;
+		bottom: -70px;
+		max-height: 650px;
+		animation-duration: 2s;
+ 		animation-name: car;
+		right: 0;
+	}
+
+	h2{
+		font-size: 48px;
+		font-weight: 700;
+		color: #fff;
+		margin: 0;
+	}
+	p{
+		font-size: 24px;
+		color: #aaa;
+		margin: 16px 0 25px 0;
+	}
+	&__buttons{
+		display: flex;
+
+	}
+	&__button{
+		padding: 20px 60px;
+		background: #FC1D1D;
+		font-family: 'dinpro_light', sans-serif;
+		font-size: 18px;
+		color: #fff;
+		border: 1px solid #FC1D1D;
+		transition: all 0.5s ease;
+		text-align: center;
+		margin: 0 12px 0 0;
+		&:hover{
+			background: none;
+			color: #fff;
+		}
+		&.transparent{
+			border: 1px solid #fff;
+			background: none;
+			&:hover{
+				background: #fff;
+				color: #000;
+			}
+		}
+	}
+	@include media-mx(1440){
+		&__wrapper{
+			padding: 0 15px;
+		}
+		&__circle{
+			max-height: 400px;
+		}
+		&__car{
+			top: 50%;
+			transform: translateY(-35%);
+			max-height: 400px;
+			right: -100px;
+		}
+		@keyframes car {
+			from {
+				right: -100%;
+			}
+
+			to {
+				right: -100px;
+			}
+		  }
+	}
+	@include media-mx(1024){
+		min-height: unset;
+	}
+	@include media-mx(768){
+		flex-direction: column;
+		h2{
+			font-size: 36px;
+			font-weight: 700;
+			color: #fff;
+			margin: 0;
+		}
+		p{
+			font-size: 18px;
+			color: #aaa;
+		}
+		&__wrapper{
+			flex-direction: column;
+		}
+		&__circle{
+			display: flex;
+			object-fit: contain;
+			max-height: unset;
+			height: 300px;
+			width: fit-content;
+			margin: 0 0 0 auto;
+		}
+		&__car{
+			top: unset;
+			transform: unset;
+			max-height: unset;
+			height: 350px;
+			right: -60px;
+		}
+		@keyframes car {
+			from {
+				right: -100%;
+			}
+
+			to {
+				right: -60px;
+			}
+		  }
+	}
+	@include media-mx(480){
+		&__circle{
+			height: 250px;
+		}
+		&__car{
+			top: unset;
+			transform: unset;
+			max-height: unset;
+			height: 300px;
+			right: -60px;
+		}
+		@keyframes car {
+			from {
+				right: -100%;
+			}
+
+			to {
+				right: -60px;
+			}
+		  }
+	}
+}
+
